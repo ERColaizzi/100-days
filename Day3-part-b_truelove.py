@@ -2,8 +2,6 @@
 true love test
 loop true
 loop love
-
-
  """
 
 word1 = "true"
@@ -33,5 +31,3 @@ elif score>=40 and score <= 50:
     print("Your score is {}, you are fine".format(score))
 else:
     print("Your score is {}".format(score))
-
-
