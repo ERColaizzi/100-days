@@ -28,7 +28,42 @@ ____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
 *******************************************************************************
 ''')
 print("Welcome to Treasure Island.")
-print("Your mission is to find the treasure.")
- 
- 
- 
+print("Your mission is to find the treasure.\n")
+
+retry = True
+
+while retry:
+    while True:
+        print("You are at a fork in the road. Do you go left or right?: ")
+        choice1=input()
+        if choice1.lower() == "left":
+            print("You come to a river. Do you WAIT for a boat or SWIM across the river?: ")
+            choice2=input()
+            if choice2.lower() == "wait":
+                print("You make it across the river safely. In front of you is a house with 3 doors.")
+                print("Do you choose the RED door, the BLUE door, or the YELLOW door?")
+                choice3 = input()
+                if choice3.lower() == "red":
+                    print("You get trapped in the house and die in a fire")
+                    break
+                elif choice3.lower() == "yellow":
+                    print("Congratulations!!! You have found the treasure!")
+                    retry = False
+                    break
+                else:
+                    print("You enter the door and a Troll eats you.")
+                    break
+            else:
+                print("You get dissentary and die")
+                break    
+        else:
+            print("You fall into a hole and die")
+            break
+    if retry == True:
+        choice_retry = input("Would you like to try again?")
+        if choice_retry.lower() in {"no","n","x"}:
+            break
+        else:
+            continue
+    else:
+        break    
