@@ -1,7 +1,6 @@
 #fizz buzz in python
 # modolu with elif
 
-
 def fb(num):
     for i in range (1,num+1):
         word = ""
@@ -14,11 +13,3 @@ def fb(num):
         print(word or i)
 
 fb(50)
-
-    
-"""     
-c = "sds"
-c+= "kok"
-print(c)
-
- """

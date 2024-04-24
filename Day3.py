@@ -1,8 +1,9 @@
 """ 
-python treasure chest
+python treasure hunt
 draw ascii image
 pick your path
 
+I stole the chest
  """
  
 print('''
@@ -30,10 +31,10 @@ ____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
 print("Welcome to Treasure Island.")
 print("Your mission is to find the treasure.\n")
 
-retry = True
+retry = True #needed for retry loop
 
 while retry:
-    while True:
+    while True: #general pick a path loop
         print("You are at a fork in the road. Do you go left or right?: ")
         choice1=input()
         if choice1.lower() == "left":
@@ -48,7 +49,7 @@ while retry:
                     break
                 elif choice3.lower() == "yellow":
                     print("Congratulations!!! You have found the treasure!")
-                    retry = False
+                    retry = False #breaks overarching retry loop
                     break
                 else:
                     print("You enter the door and a Troll eats you.")
@@ -59,11 +60,11 @@ while retry:
         else:
             print("You fall into a hole and die")
             break
-    if retry == True:
+    if retry == True: #checks for repeat
         choice_retry = input("Would you like to try again?")
         if choice_retry.lower() in {"no","n","x"}:
             break
         else:
             continue
-    else:
+    else: #retry broken on finish
         break    

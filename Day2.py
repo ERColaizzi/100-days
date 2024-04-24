@@ -18,7 +18,3 @@ else:   #if no error continue here
     per_person = total_bill/split_number
     print("Each person should pay: ${}".format(per_person))    
     
-    
-
-
-
