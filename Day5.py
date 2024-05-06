@@ -61,6 +61,28 @@ num_upper = random.randint(2,uppermax)
 start_str = {}
 
 
+import random
+import string
+x = random.choice(string.digits)
+print(x)
+
+
+for i in range(5):
+    random(string.digits)
+
+
+print(password)
+
+
+##i really hate that i have to go string to list to string
+def string_shuffle(s):
+    s2 = list(s)
+    random.shuffle(s2)
+    shuffled= "".join(s2)
+    return shuffled
+
+
+
 
 
 ##string.ascii_letters
@@ -77,13 +99,4 @@ start_str = {}
 #Create len
 #random insert into
 #upper, num, spec
-
-
-
-
-
-
-
-
-
 
