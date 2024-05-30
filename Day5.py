@@ -9,6 +9,8 @@
 
 import random
 import string
+import pyperclip
+
 
 def inp_len():
     while True:
@@ -25,7 +27,7 @@ def inp_num():
     while True:
         try:
             inp_num = int(input("How many numbers would you like?: "))    
-            if inp_len >=2:
+            if inp_num >=2:
                 break
             raise Exception()
         except:
@@ -36,7 +38,7 @@ def inp_char():
     while True:
         try:
             inp_char = int(input("How many special characters would you like?: "))    
-            if inp_len >=2:
+            if inp_char >=2:
                 break
             raise Exception()
         except:
@@ -56,22 +58,24 @@ else:
     print("your password length has been increased due to numbers and characters")
     length = num_num + num_char + 4
 
-uppermax = num_len - num_char - num_num -2
-num_upper = random.randint(2,uppermax) 
-start_str = {}
+uppermax = length -2
+num_upper = random.randint(2,uppermax)
+num_lower = length - num_upper
+start_str = ""
 
 
-import random
-import string
-x = random.choice(string.digits)
-print(x)
 
+for i in range(num_num):
+    start_str += random.choice(string.digits)
 
-for i in range(5):
-    random(string.digits)
+for i in range(num_char):
+    start_str += random.choice(string.punctuation)
 
+for i in range(num_upper):
+    start_str += random.choice(string.ascii_uppercase)
 
-print(password)
+for i in range(num_lower):
+    start_str += random.choice(string.ascii_lowercase)
 
 
 ##i really hate that i have to go string to list to string
@@ -82,21 +86,9 @@ def string_shuffle(s):
     return shuffled
 
 
+password = string_shuffle(start_str)
+pyperclip.copy(password)
 
+print("Your password is: ", password, " it has been copied to your clipboard")
 
-
-##string.ascii_letters
-#acii.lower + ascii.upper
-##string.ascii_digits
-##string.punctuation
-
-
-
-#create string of length
-#add upper, num, spec
-#then shuffle
-#or 
-#Create len
-#random insert into
-#upper, num, spec
 
